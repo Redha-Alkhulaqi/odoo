@@ -33,7 +33,7 @@ def _check_bedrooms_greater_zero(self):
     for rec in self:
         if rec.bedrooms == 0:
             raise ValidationError('Please add valid number of bedrooms!')
-'''
+
 
 # CRUD OPERATION:
 
@@ -65,3 +65,4 @@ def unlink(self):
     #  res = super().unlink(self)
     print("inside unlink method")
     return res
+'''
