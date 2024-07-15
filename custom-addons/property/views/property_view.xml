@@ -1,0 +1,87 @@
+<odoo>
+    <record  id="property_view_tree"  model="ir.ui.view">
+	<field name="name">property tree</field>
+	<field name="model">property</field>
+	<field name="arch"  type="xml">
+	    <tree multi_edit="1" create="0" edit="0" delete="0">
+		<field name="name"/>
+		<field name="postcode"/>
+		<field name="date_availability"/>
+		<field name="selling_price"/>
+		<field name="garden"/>
+		<field name="facades"/>
+		<field name="garden_area"/>
+		<field name="bedrooms" optional="1"/>
+		<field name="garage" optional="1"/>
+	    </tree>
+	</field>
+    </record>
+
+    <record  id="property_view_form"  model="ir.ui.view">
+	<field name="name">property form</field>
+	<field name="model">property</field>
+	<field name="arch"  type="xml">
+	    <form create="0" edit="0" delete="0">
+		<sheet>
+		    <div class="oe_title">
+			<label for="name"/>
+			<h1>
+			    <field name="name"/>
+			</h1>
+		    </div>
+		    <group>
+		        <group string="General Info.">
+			    <field name="date_availability" required="1"/>
+			    <field name="postcode"/>
+			    <field name="expected_price"/>
+			    <field name="selling_price"/>
+			    <field name="bedrooms"/>
+			    <field name="living_area"/>
+			    <field name="facades"/>
+		        </group>
+		        <group string="Additional Info.">
+			    <field name="garden_area"/>
+			    <field name="bedrooms"/>
+			    <field name="garden"/>
+			    <field name="garden_area"/>
+			    <field name="garage"/>
+			    <field name="garden_orientation"/>
+		        </group>
+			<group>
+			    <field name="description" required="1"/>
+			</group>
+		    </group>
+		</sheet>
+	    </form>
+	</field>
+    </record>
+
+    <record  id="property_view_search"  model="ir.ui.view">
+	<field name="name">property search</field>
+	<field name="model">property</field>
+	<field name="arch"  type="xml">
+	    <search>
+		<field name="name"/>
+		<field name="postcode"/>
+
+		<filter name="is_garden" string="With Garden" domain="[('garden', '=', True)]"/>
+		<filter name="is_not_garden" string="Without Garden" domain="[('garden', '=', False)]"/>
+		<filter name="is_garage" string="With Garden" domain="[('garage', '=', True)]"/>
+
+		<filter name="group_garden" string="Garden" context="{'group_by': 'garden'}"/>
+	    </search>
+	</field>
+    </record>
+
+    <record  id="property_action"  model="ir.actions.act_window">
+	<field name="name">Property</field>
+	<field name="res_model">property</field>
+    </record>
+
+    <menuitem
+	id="properties_menu_item"
+	name="Properties"
+	parent="properties_menu"
+	action="properties_action"
+    />
+</odoo>
