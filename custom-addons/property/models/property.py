@@ -22,12 +22,13 @@ class Property(models.Model):
         ('west', 'West'),
     ], default='north')
 
+'''
 
 _sql_constraints = [
     ('unique_name', 'unique("name")', 'This name is exist!')
 ]
 
-'''
+
 @api.constrains('bedrooms')
 def _check_bedrooms_greater_zero(self):
     for rec in self:
