@@ -10,7 +10,7 @@
     # data files always loaded at installation
     'data': [
         'views/base_menu.xml',
-        'views/property_view.xml',
+#       'views/property_view.xml',
     ],
     # data files containing optionally loaded demonstration data
     'demo': [
