@@ -1,7 +1,7 @@
 {
     'name': "Property",
     'version': '17.0.0.1.0',
-    'depends': ['base', 'onboarding'],
+    'depends': ['base',],
     'author': "Electron Technology",
     'category': 'Sales',
     'description': """
