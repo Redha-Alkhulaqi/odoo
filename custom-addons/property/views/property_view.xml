@@ -62,4 +62,8 @@
 			</search>
 		</field>
 	</record>
+	<record  id="property_action"  model="ir.actions.act_window">
+		<field name="name">Property</field>
+		<field name="res_model">property</field>
+	</record>
 </odoo>
