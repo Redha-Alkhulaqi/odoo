@@ -3,7 +3,7 @@
 		<field name="name">Property Form</field>
 		<field name="model">property</field>
 		<field name="arch"  type="xml">
-			<form>
+			<form create="1" edit="1" delete="1">
 				<sheet>
 					<group>
 						<group string="General Info.">
@@ -24,7 +24,7 @@
 							<field name="garden_orientation"/>
 						</group>
 						<group>
-							<field name="description" required="1"/>
+							<field name="description"/>
 						</group>
 					</group>
 				</sheet>
@@ -57,7 +57,6 @@
 				<field name="postcode"/>
 				<filter name="is_garden" string="With Garden" domain="[('garden', '=', True)]"/>
 				<filter name="is_not_garden" string="Without Garden" domain="[('garden', '=', False)]"/>
-				<filter name="is_garage" string="With Garden" domain="[('garage', '=', True)]"/>
 				<filter name="group_garden" string="Garden" context="{'group_by': 'garden'}"/>
 			</search>
 		</field>
