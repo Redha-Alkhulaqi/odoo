@@ -49,7 +49,7 @@
 		</field>
 	</record>
 	<record  id="property_view_search"  model="ir.ui.view">
-		<field name="name">property search</field>
+		<field name="name">Property Search</field>
 		<field name="model">property</field>
 		<field name="arch"  type="xml">
 			<search>
@@ -66,4 +66,9 @@
 		<field name="name">Property</field>
 		<field name="res_model">property</field>
 	</record>
+	<menuitem id="properties_menu_item"
+	name="Properties"
+	parent="properties_menu"
+	action="property_action"
+	/>
 </odoo>
