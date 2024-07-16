@@ -72,10 +72,5 @@
 		<field name="name">Property</field>
 		<field name="res_model">property</field>
 	</record>
-	<menuitem
-	id="properties_menu_item"
-	name="Properties"
-	parent="properties_menu"
-	action="properties_action"
-    />
+	<menuitem id="properties_menu_item" name="Properties" parent="properties_menu" action="properties_action"/>
 </odoo>
