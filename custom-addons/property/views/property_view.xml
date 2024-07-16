@@ -31,4 +31,9 @@
 			</form>
 		</field>
 	</record>
+	<record  id="property_action"  model="ir.actions.act_window">
+		<field name="name">Property</field>
+		<field name="res_model">property</field>
+	</record>
+	<menuitem id="properties_menu_item" name="Properties" parent="properties_menu" action="properties_action"/>
 </odoo>
