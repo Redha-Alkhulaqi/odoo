@@ -3575,7 +3575,7 @@ class BaseModel(metaclass=MetaModel):
         missing_langs = set(translations) - valid_langs
         if missing_langs:
             raise UserError(
-                _("The following languages are not activated: %(missing_names)s",
+    ("The following languages are not activated: %(missing_names)s",
                 missing_names=', '.join(missing_langs))
             )
 
