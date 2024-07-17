@@ -1,7 +1,7 @@
 <odoo>
     <record  id="owner_view_tree"  model="ir.ui.view">
-		<field name="name">Property Tree</field>
-		<field name="model">property</field>
+		<field name="name">Owner Tree</field>
+		<field name="model">owner</field>
 		<field name="arch"  type="xml">
 			<tree multi_edit="1">
 				<field name="name"/>
