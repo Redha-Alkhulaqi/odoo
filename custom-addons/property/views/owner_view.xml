@@ -10,6 +10,7 @@
 			</tree>
 		</field>
 	</record>
+
 	<record  id="owner_view_form"  model="ir.ui.view">
 		<field name="name">Owner Form</field>
 		<field name="model">owner</field>
@@ -26,9 +27,6 @@
 						<group>
 							<field name="phone"/>
 							<field name="address"/>
-						</group>
-						<group>
-
 						</group>
 					</group>
 				</sheet>
