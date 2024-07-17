@@ -22,15 +22,13 @@ class Property(models.Model):
         ('east', 'East'),
         ('west', 'West'),
     ], default='north')
-    owner_id = fields.Many2one('owner')
-    taq_ids = fields.Many2many('taq')
-
     state = fields.Selection([
         ('draft', 'Draft'),
         ('pending', 'Pending'),
         ('sold', 'Sold'),
     ], default='draft')
-
+    owner_id = fields.Many2one('owner')
+    #taq_ids = fields.Many2many('taq')
     _sql_constraints = [
     ('unique_name', 'unique("name")', 'This name is exist!')
     ]
