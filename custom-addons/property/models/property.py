@@ -33,7 +33,6 @@ class Property(models.Model):
     ('unique_name', 'unique("name")', 'This name is exist!')
     ]
 
-
     @api.constrains('bedrooms')
     def _check_bedrooms_greater_zero(self):
         for rec in self:
