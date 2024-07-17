@@ -1,6 +1,6 @@
 from odoo import models, fields
 
-class Taq(models.Model):
-    _name = 'taq'
+class Tag(models.Model):
+    _name = 'tag'
 
     name = fields.Char(required=True)
