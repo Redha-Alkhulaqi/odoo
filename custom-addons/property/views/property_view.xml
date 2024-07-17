@@ -34,7 +34,6 @@
 							<field name="owner_id"/>
 							<field name="garden_area"/>
 							<field name="garden"/>
-							<field name="garden_area"/>
 							<field name="garage"/>
 							<field name="garden_orientation"/>
 							<field name="tag_ids" widget="many2many_tags"/>
