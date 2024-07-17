@@ -29,6 +29,7 @@ class Property(models.Model):
     ], default='draft')
     owner_id = fields.Many2one('owner')
     #taq_ids = fields.Many2many('taq')
+
     _sql_constraints = [
     ('unique_name', 'unique("name")', 'This name is exist!')
     ]
