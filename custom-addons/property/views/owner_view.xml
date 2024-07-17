@@ -28,6 +28,9 @@
 							<field name="phone"/>
 							<field name="address"/>
 						</group>
+						<group>
+							<field name="property_ids" widget="many2many_tags"/>
+						</group>
 					</group>
 				</sheet>
 			</form>

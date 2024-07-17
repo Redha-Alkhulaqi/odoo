@@ -4398,7 +4398,7 @@ class One2many(_RelationalMulti):
     auto_join = False                   # whether joins are generated upon search
     copy = False                        # o2m are not copied by default
 
-    def __init__(self, comodel_name=Default, inverse_name=Default, string=Default, **kwargs):
+    def __init__(self, comodel_name: object = Default, inverse_name: object = Default, string: object = Default, **kwargs: object) -> object:
         super(One2many, self).__init__(
             comodel_name=comodel_name,
             inverse_name=inverse_name,
