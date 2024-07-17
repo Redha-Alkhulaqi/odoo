@@ -33,7 +33,6 @@
 						<group string="Additional Info.">
 							<field name="owner_id"/>
 							<field name="garden_area"/>
-							<field name="bedrooms"/>
 							<field name="garden"/>
 							<field name="garden_area"/>
 							<field name="garage"/>
