@@ -4,12 +4,12 @@ from odoo.exceptions import ValidationError
 class Property(models.Model):
     _name = 'property'
 
-    name = fields.Char(required=True, default='New', size=100)
+    name = fields.Char(required=True, default='New', size=15)
     description = fields.Text()
-    postcode = fields.Char(required=1)
+    postcode = fields.Char()
     date_availability = fields.Date()
-    expected_price = fields.Float(digits=(0, 5))
-    selling_price = fields.Float()
+    expected_price = fields.Float(digits=(0, 2))
+    selling_price = fields.Float(digits=(0, 2))
     bedrooms = fields.Integer()
     living_area = fields.Integer()
     facades = fields.Integer()
@@ -22,13 +22,13 @@ class Property(models.Model):
         ('east', 'East'),
         ('west', 'West'),
     ], default='north')
+    owner_id = fields.Many2one('owner')
+    tag_ids = fields.Many2many('tag')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('pending', 'Pending'),
         ('sold', 'Sold'),
     ], default='draft')
-    owner_id = fields.Many2one('owner')
-    tag_ids = fields.Many2many('tag')
 
     _sql_constraints = [
     ('unique_name', 'unique("name")', 'This name is exist!')
