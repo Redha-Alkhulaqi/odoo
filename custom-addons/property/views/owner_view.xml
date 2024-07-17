@@ -1,0 +1,49 @@
+<odoo>
+    <record  id="owner_view_tree"  model="ir.ui.view">
+		<field name="name">Property Tree</field>
+		<field name="model">property</field>
+		<field name="arch"  type="xml">
+			<tree multi_edit="1">
+				<field name="name"/>
+				<field name="phone"/>
+				<field name="address"/>
+			</tree>
+		</field>
+	</record>
+	<record  id="owner_view_form"  model="ir.ui.view">
+		<field name="name">Owner Form</field>
+		<field name="model">owner</field>
+		<field name="arch"  type="xml">
+			<form>
+				<sheet>
+					<div class="oe_title">
+						<label for="name"/>
+						<h1>
+							<field name="name"/>
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="phone"/>
+							<field name="address"/>
+						</group>
+						<group>
+
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record  id="owner_action"  model="ir.actions.act_window">
+		<field name="name">Owner</field>
+		<field name="res_model">owner</field>
+	</record>
+
+	<menuitem id="owner_menu_item"
+	name="Owners"
+	parent="configration_menu"
+	action="owner_action"
+	/>
+</odoo>

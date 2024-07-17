@@ -5,6 +5,12 @@
 		<field name="arch"  type="xml">
 			<form create="1" edit="1" delete="1">
 				<sheet>
+					<div class="oe_title">
+						<label for="name"/>
+						<h1>
+							<field name="name"/>
+						</h1>
+					</div>
 					<header>
 						<button name="action_draft" type="object" class="btn-primary" string="Set To Draft"
 								invisible="state == 'draft'"/>

@@ -1,7 +1,8 @@
 {
     'name': "Property",
     'version': '17.0.0.1.0',
-    'depends': ['base'],
+    'depends': ['base',
+                ],
     'author': "Electron Technology",
     'category': 'Sales',
     'description': """
@@ -12,6 +13,7 @@
         'security/ir.model.access.csv',
         'views/base_menu.xml',
         'views/property_view.xml',
+        'views/owner_view.xml',
     ],
     'application': True,
 }
