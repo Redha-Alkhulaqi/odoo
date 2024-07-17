@@ -22,9 +22,6 @@
 						</h1>
 					</div>
 					<group>
-						<group>
-							<field name="property_ids" widget="many2many_tags"/>
-						</group>
 					</group>
 				</sheet>
 			</form>
