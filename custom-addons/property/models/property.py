@@ -55,7 +55,7 @@ class Property(models.Model):
             print("inside sold action")
             rec.state = 'sold'
 
-
+'''
 # CRUD OPERATION:
 
 @api.model_create_multi
