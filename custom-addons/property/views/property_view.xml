@@ -5,6 +5,15 @@
 		<field name="arch"  type="xml">
 			<form create="1" edit="1" delete="1">
 				<sheet>
+					<header>
+						<button name="action_draft" type="object" class="btn-primary" string="Set To Draft"
+								invisible="state == 'draft'"/>
+						<button name="action_pending" type="object" class="btn-secondary" string="Pending"
+								invisible="state != 'draft'"/>
+						<button name="action_sold" type="object" class="btn-success" string="Sold"
+								invisible="state != 'pending'"/>
+						<field name="state" widget="statusbar"/>
+					</header>
 					<group>
 						<group string="General Info.">
 							<field name="date_availability" required="1"/>
@@ -16,12 +25,15 @@
 							<field name="facades"/>
 						</group>
 						<group string="Additional Info.">
+							<field name="owner_id"/>
+							<field name="state"/>
 							<field name="garden_area"/>
 							<field name="bedrooms"/>
 							<field name="garden"/>
 							<field name="garden_area"/>
 							<field name="garage"/>
 							<field name="garden_orientation"/>
+							<field name="taq_ids" widget="many2many_tags"/>
 						</group>
 						<group>
 							<field name="description"/>
@@ -42,6 +54,7 @@
 				<field name="selling_price"/>
 				<field name="garden"/>
 				<field name="facades"/>
+				<field name="state"/>
 				<field name="garden_area"/>
 				<field name="bedrooms" optional="1"/>
 				<field name="garage" optional="1"/>

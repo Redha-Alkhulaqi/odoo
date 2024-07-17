@@ -21,20 +21,39 @@ class Property(models.Model):
         ('east', 'East'),
         ('west', 'West'),
     ], default='north')
+    owner_id = fields.Many2one('owner')
+    taq_ids = fields.Many2many('taq')
 
-
-_sql_constraints = [
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('pending', 'Pending'),
+        ('sold', 'Sold'),
+    ], default='draft')
+    _sql_constraints = [
     ('unique_name', 'unique("name")', 'This name is exist!')
-]
+    ]
 
 
-'''
+    @api.constrains('bedrooms')
+    def _check_bedrooms_greater_zero(self):
+        for rec in self:
+            if rec.bedrooms == 0:
+                raise ValidationError('Please add valid number of bedrooms!')
 
-@api.constrains('bedrooms')
-def _check_bedrooms_greater_zero(self):
-    for rec in self:
-        if rec.bedrooms == 0:
-            raise ValidationError('Please add valid number of bedrooms!')
+    def action_draft(self):
+        for rec in self:
+            print("inside draft action")
+            rec.state = 'draft'
+
+    def action_pending(self):
+        for rec in self:
+            print("inside pending action")
+            rec.state = 'pending'
+
+    def action_sold(self):
+        for rec in self:
+            print("inside sold action")
+            rec.state = 'sold'
 
 
 # CRUD OPERATION:
