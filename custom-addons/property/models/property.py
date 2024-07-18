@@ -10,6 +10,7 @@ class Property(models.Model):
     date_availability = fields.Date()
     expected_price = fields.Float(digits=(0, 2))
     selling_price = fields.Float(digits=(0, 2))
+    diff = fields.Float(compute='_compute_diff', store=True)
     bedrooms = fields.Integer()
     living_area = fields.Integer()
     facades = fields.Integer()
@@ -34,6 +35,17 @@ class Property(models.Model):
     ('unique_name', 'unique("name")', 'This name is exist!')
     ]
 
+    @api.depends('expected_price', 'selling_price')
+    def _compute_diff(self):
+        for rec in self:
+            rec.diff = rec.expected_price - rec.selling_price
+
+    @api.onchange('expected_price')
+    def _onchange_expected_price(self):
+        for rec in self:
+            return {
+                'warning': {'title': 'warning', 'message': 'negative value', 'type': 'notification'}
+            }
     @api.constrains('bedrooms')
     def _check_bedrooms_greater_zero(self):
         for rec in self:

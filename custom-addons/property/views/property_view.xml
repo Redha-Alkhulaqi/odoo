@@ -26,6 +26,7 @@
 							<field name="postcode"/>
 							<field name="expected_price"/>
 							<field name="selling_price"/>
+							<field name="diff"/>
 							<field name="bedrooms"/>
 							<field name="living_area"/>
 							<field name="facades"/>
