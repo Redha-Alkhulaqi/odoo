@@ -5,5 +5,5 @@ text-align: left !important;
 }
 */
 .header_custom table thead > tr > th:nth-child(2) {
-width: 150px !important;
+width: 100px !important;
 }
