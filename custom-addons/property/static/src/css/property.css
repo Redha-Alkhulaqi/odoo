@@ -21,9 +21,21 @@ width: 100px !important;
 }
 
 .header_custom table thead > tr > th:nth-child(6) {
-width: 50px !important;
+width: 100px !important;
 }
 
 .header_custom table thead > tr > th:nth-child(7) {
-width: 50px !important;
+width: 100px !important;
+}
+
+.header_custom table thead > tr > th:nth-child(8) {
+width: 100px !important;
+}
+
+.header_custom table thead > tr > th:nth-child(9) {
+width: 100px !important;
+}
+
+.header_custom table thead > tr > th:nth-child(10) {
+width: 100px !important;
 }
