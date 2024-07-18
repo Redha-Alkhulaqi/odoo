@@ -4,6 +4,10 @@ color: white !important;
 text-align: left !important;
 }
 
-.header_custom table thead > tr > th:nth-child(4) {
+.header_custom table thead > tr > th:nth-child(2) {
 width: 100px !important;
+}
+
+.header_custom table thead > tr > th:nth-child(3) {
+width: 80px !important;
 }
