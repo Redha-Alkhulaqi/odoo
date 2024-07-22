@@ -39,6 +39,8 @@ class Property(models.Model):
     ('unique_name', 'unique("name")', 'This name is exist!')
     ]
 
+    line_ids = fields.One2many('property.line', 'property_id')
+
     @api.depends('expected_price', 'selling_price')
     def _compute_diff(self):
         for rec in self:
@@ -67,3 +69,12 @@ class Property(models.Model):
     def action_sold(self):
         for rec in self:
             rec.state = 'sold'
+
+
+class PropertyLines(models.Model):
+    _name = 'property.line'
+
+    property_id = fields.Many2one('property')
+    area = fields.Float()
+    description = fields.Char()
+
