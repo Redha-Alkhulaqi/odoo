@@ -3,6 +3,7 @@ from odoo.exceptions import ValidationError
 
 class Property(models.Model):
     _name = 'property'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(required=True, default='New', size=15)
     description = fields.Text()
