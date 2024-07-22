@@ -71,7 +71,7 @@ class Property(models.Model):
             rec.state = 'sold'
 
 
-class PropertyLines(models.Model):
+class PropertyLine(models.Model):
     _name = 'property.line'
 
     property_id = fields.Many2one('property')
