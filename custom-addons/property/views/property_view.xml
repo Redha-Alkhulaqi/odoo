@@ -14,6 +14,7 @@
 				<field name="garden_area"/>
 				<field name="bedrooms" optional="1"/>
 				<field name="garage" optional="1"/>
+				<field name="active"/>
 			</tree>
 		</field>
 	</record>
@@ -49,6 +50,7 @@
 							<field name="bedrooms"/>
 							<field name="living_area"/>
 							<field name="facades"/>
+							<field name="active"/>
 						</group>
 						<group string="Additional Info.">
 							<field name="owner_id"/>
@@ -58,6 +60,7 @@
 							<field name="garden"/>
 							<field name="garage"/>
 							<field name="garden_orientation"/>
+							<field name="active"/>
 							<field name="tag_ids" widget="many2many_tags"/>
 						</group>
 						<group>

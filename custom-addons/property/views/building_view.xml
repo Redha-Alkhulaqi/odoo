@@ -8,6 +8,7 @@
 				<field name="no"/>
 				<field name="code"/>
 				<field name="description"/>
+				<field name="active"/>
 			</tree>
 		</field>
 	</record>
@@ -26,6 +27,7 @@
 						<group string="Additional Info.">
 							<field name="code"/>
 							<field name="description"/>
+							<field name="active"/>
 						</group>
 					</group>
 				</sheet>

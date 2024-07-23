@@ -40,7 +40,7 @@ class Property(models.Model):
     ]
 
     line_ids = fields.One2many('property.line', 'property_id')
-
+    active = fields.Boolean(default=True)
     @api.depends('expected_price', 'selling_price')
     def _compute_diff(self):
         for rec in self:
