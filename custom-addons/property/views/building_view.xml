@@ -1,0 +1,61 @@
+<odoo>
+    <record  id="building_view_tree"  model="ir.ui.view">
+		<field name="name">Building Tree</field>
+		<field name="model">building</field>
+		<field name="arch"  type="xml">
+			<tree class="header_custom">
+				<field name="no"/>
+				<field name="code"/>
+				<field name="description"/>
+				<field name="selling_price"/>
+			</tree>
+		</field>
+	</record>
+
+	<record  id="building_view_form"  model="ir.ui.view">
+		<field name="name">Building Form</field>
+		<field name="model">building</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<group string="General Info.">
+							<field name="no"/>
+						</group>
+						<group string="Additional Info.">
+							<field name="code"/>
+							<field name="description"/>
+						</group>
+					</group>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids"/>
+					<field name="activity_ids"/>
+					<field name="message_ids"/>
+				</div>
+			</form>
+		</field>
+	</record>
+
+	<record  id="building_view_search"  model="ir.ui.view">
+		<field name="name">Building Search</field>
+		<field name="model">building</field>
+		<field name="arch"  type="xml">
+			<search>
+				<field name="no"/>
+				<field name="code"/>
+			</search>
+		</field>
+	</record>
+
+	<record  id="building_action"  model="ir.actions.act_window">
+		<field name="name">Building</field>
+		<field name="res_model">building</field>
+	</record>
+
+	<menuitem id="building_menu_item"
+	name="Buildings"
+	parent="properties_menu"
+	action="building_action"
+	/>
+</odoo>
