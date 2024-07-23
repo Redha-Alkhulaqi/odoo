@@ -47,6 +47,7 @@
 		</field>
 	</record>
 
+
 	<record  id="building_action"  model="ir.actions.act_window">
 		<field name="name">Building</field>
 		<field name="res_model">building</field>
