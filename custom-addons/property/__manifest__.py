@@ -1,7 +1,7 @@
 {
     'name': "Property",
     'version': '1.0',
-    'depends': ['base', 'sale_management', 'account_accountant', 'mail'],
+    'depends': ['base', 'sale_management', 'account_accountant', 'mail', 'contacts'],
     'author': "Electron Technology",
     'category': 'Sales',
     'description': """
@@ -15,6 +15,7 @@
         'views/owner_view.xml',
         'views/tag_view.xml',
         'views/sale_order_view.xml',
+        'views/res_partner_view.xml',
     ],
     'assets': {
         'web.assets_backend': ['property/static/src/css/property.css']
