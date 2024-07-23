@@ -4,6 +4,7 @@
 		<field name="model">building</field>
 		<field name="arch"  type="xml">
 			<tree class="header_custom">
+				<field name="name"/>
 				<field name="no"/>
 				<field name="code"/>
 				<field name="description"/>
@@ -19,6 +20,7 @@
 				<sheet>
 					<group>
 						<group string="General Info.">
+							<field name="name"/>
 							<field name="no"/>
 						</group>
 						<group string="Additional Info.">
@@ -41,6 +43,7 @@
 		<field name="model">building</field>
 		<field name="arch"  type="xml">
 			<search>
+				<field name="name"/>
 				<field name="no"/>
 				<field name="code"/>
 			</search>

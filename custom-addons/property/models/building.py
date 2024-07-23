@@ -9,4 +9,4 @@ class Building(models.Model):
     no = fields.Integer()
     code = fields.Char()
     description = fields.Text()
-
+    name = fields.Char()
