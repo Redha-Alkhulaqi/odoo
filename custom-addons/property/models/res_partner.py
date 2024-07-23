@@ -4,7 +4,7 @@ from odoo import models, fields
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    #property_id = fields.Many2one('property')
+    property_id = fields.Many2one('property')
     #price = fields.Float(related='property_id.selling_price', readonly=False)
     # price = fields.Float(compute='_compute_price', readonly=False)
 
