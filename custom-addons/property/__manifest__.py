@@ -1,7 +1,7 @@
 {
     'name': "Property",
     'version': '1.0',
-    'depends': ['base', 'sale_management', 'account_accountant', 'mail', 'contacts'],
+    'depends': ['base', 'sale_management', 'account_accountant', 'mail'],
     'author': "Electron Technology",
     'category': 'Sales',
     'description': """
