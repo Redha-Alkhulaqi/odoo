@@ -33,6 +33,7 @@ class Property(models.Model):
         ('draft', 'Draft'),
         ('pending', 'Pending'),
         ('sold', 'Sold'),
+        ('closed', 'Closed'),
     ], default='draft')
 
     _sql_constraints = [
