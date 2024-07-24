@@ -3,9 +3,10 @@
 		<field name="name">Property Tree</field>
 		<field name="model">property</field>
 		<field name="arch"  type="xml">
-			<tree class="header_custom">
+			<tree class="header_custom" decoration-danger="(is_late)">
 				<field name="name"/>
 				<field name="postcode"/>
+				<field name="is_late" invisible="True"/>
 				<field name="date_availability"/>
 				<field name="selling_price"/>
 				<field name="garden"/>
@@ -44,7 +45,7 @@
 						<group string="General Info.">
 							<field name="date_availability" required="1"/>
 							<field name="expected_selling_date"/>
-							<field name="is_late"/>
+							<field name="is_late" invisible="True"/>
 							<field name="postcode"/>
 							<field name="expected_price"/>
 							<field name="selling_price"/>
