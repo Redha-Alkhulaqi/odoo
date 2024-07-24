@@ -3,13 +3,15 @@ from odoo.exceptions import ValidationError
 
 class Property(models.Model):
     _name = 'property'
-    _description = 'Property Record'
+    _description = 'Property'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(required=True, default='Property', size=15)
     description = fields.Text(tracking=True)
     postcode = fields.Char()
     date_availability = fields.Date(tracking=True)
+    expected_selling_date = fields.Date(tracking=True)
+    is_late = fields.Boolean()
     expected_price = fields.Float(digits=(0, 2))
     selling_price = fields.Float(digits=(0, 2))
     diff = fields.Float(compute='_compute_diff', store=True)
@@ -74,6 +76,12 @@ class Property(models.Model):
     def action_closed(self):
         for rec in self:
             rec.state = 'closed'
+
+    def check_expected_selling_date(self):
+        property_ids = self.search([])
+        for rec in property_ids:
+            if rec.expected_selling_date and rec.expected_selling_date < fields.date.today():
+                rec.is_late = True
 
 
 class PropertyLine(models.Model):

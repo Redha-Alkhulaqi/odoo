@@ -43,6 +43,8 @@
 					<group>
 						<group string="General Info.">
 							<field name="date_availability" required="1"/>
+							<field name="expected_selling_date"/>
+							<field name="is_late"/>
 							<field name="postcode"/>
 							<field name="expected_price"/>
 							<field name="selling_price"/>
@@ -114,10 +116,18 @@
 		<field name="code">
 			action = records.action_closed()
 		</field>
-
 	</record>
 
-
+	<record id="check_expected_selling_date_corn" model="ir.corn">
+		<field name="name">Property: Check expected selling date</field>
+		<field name="model_id" ref="model_property"/>
+		<field name="state">code</field>
+		<field name="code">model.check_expected_selling_date()</field>
+		<field name="interval_number">1</field>
+		<field name="interval_type">days</field>
+		<field name="numbercall">-1</field>
+		<field name="active">True</field>
+	</record>
 
 	<menuitem id="properties_menu_item"
 	name="Properties"
