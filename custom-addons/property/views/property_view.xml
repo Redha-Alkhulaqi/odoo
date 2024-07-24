@@ -106,6 +106,19 @@
 		<field name="res_model">property</field>
 	</record>
 
+	<record id="property_closed_server_action" model="ir.actions.server">
+		<field name="name">Property closed server action</field>
+		<field name="model_id" ref="model_property"/>
+		<field name="binding_model_id" ref="model_property"/>
+		<field name="state">code</field>
+		<field name="code">
+			action = records.action_closed()
+		</field>
+
+	</record>
+
+
+
 	<menuitem id="properties_menu_item"
 	name="Properties"
 	parent="properties_menu"

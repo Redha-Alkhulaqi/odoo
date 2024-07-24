@@ -71,6 +71,10 @@ class Property(models.Model):
         for rec in self:
             rec.state = 'sold'
 
+    def action_closed(self):
+        for rec in self:
+            rec.state = 'closed'
+
 
 class PropertyLine(models.Model):
     _name = 'property.line'
