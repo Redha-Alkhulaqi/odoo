@@ -118,7 +118,7 @@
 		</field>
 	</record>
 
-	<record id="check_expected_selling_date_cronn" model="ir.cron">
+	<record id="check_expected_selling_date_cron" model="ir.cron">
 		<field name="name">Property: Check expected selling date</field>
 		<field name="model_id" ref="model_property"/>
 		<field name="state">code</field>
