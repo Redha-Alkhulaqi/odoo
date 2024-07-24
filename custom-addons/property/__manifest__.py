@@ -17,6 +17,7 @@
         'views/sale_order_view.xml',
        #'views/res_partner_view.xml',
         'views/building_view.xml',
+        'reports/property_report.xml',
     ],
     'assets': {
         'web.assets_backend': ['property/static/src/css/property.css']
