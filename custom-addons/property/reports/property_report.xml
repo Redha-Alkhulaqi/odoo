@@ -13,6 +13,36 @@
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <h1>Property Report</h1>
+                    <style>
+                        table {
+                        width:100%;
+                        border:1px solid #b3adad;
+                        border-collapse:collapse;
+                        padding:5px;
+                        }
+                        table th {
+                        border:1px solid #b3adad;
+                        padding:5px;
+                        background: #f0f0f0;
+                        color: #313030;
+                        }
+                        table td {
+                        border:1px solid #b3adad;
+                        text-align:center;
+                        padding:5px;
+                        background: #ffffff;
+                        color: #313030;
+                        }
+                    </style>
+                    <table>
+                        <thead>
+                            <th colspan="4">General Information</th>
+                        </thead>
+                        <td>Name</td>
+                        <td></td>
+                        <td>Postcode</td>
+                        <td></td>
+                    </table>
                 </t>
             </t>
         </t>
