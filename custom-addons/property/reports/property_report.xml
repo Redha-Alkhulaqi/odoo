@@ -2,7 +2,7 @@
     <record id="property_record" model="ir.actions.report">
         <field name="name">Property Report</field>
         <field name="model">property</field>
-        <field name="report_type">qweb-pdf</field>
+        <field name="report_type">qweb-html</field>
         <field name="binding_model_id" ref="model_property"/>
         <field name="binding_type">report</field>
         <field name="report_name">property.report_template</field>
