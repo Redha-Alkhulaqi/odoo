@@ -1,0 +1,84 @@
+<odoo>
+    <record  id="todo_task_view_tree"  model="ir.ui.view">
+		<field name="name">ToDo Task Tree</field>
+		<field name="model">todo.task</field>
+		<field name="arch"  type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="due_date"/>
+				<field name="assign_to_id"/>
+				<field name="state"/>
+			</tree>
+		</field>
+	</record>
+
+	<record  id="todo_task_view_form"  model="ir.ui.view">
+		<field name="name">ToDo Task Form</field>
+		<field name="model">todo.task</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<header>
+<!--						<button name="action_draft" type="object" class="btn-primary" string="Set To Draft"
+								invisible="state == 'draft'"/> -->
+						<field name="state" widget="statusbar"/>
+					</header>
+					<div class="oe_title">
+						<label for="name"/>
+						<h1>
+							<field name="name"/>
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="due_date"/>
+						</group>
+						<group>
+							<field name="assign_to_id"/>
+						</group>
+						<group>
+							<field name="description"/>
+						</group>
+					</group>
+
+				</sheet>
+<!--				<div class="oe_chatter">-->
+<!--					<field name="message_follower_ids"/>-->
+<!--					<field name="activity_ids"/>-->
+<!--					<field name="message_ids"/>-->
+<!--				</div>-->
+			</form>
+		</field>
+	</record>
+
+	<record  id="todo_task_view_search"  model="ir.ui.view">
+		<field name="name">Todo Task Search</field>
+		<field name="model">todo.task</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>
+				<field name="assign_to_id"/>
+
+				<filter name="state_new" string="New" domain="[('state', '=', 'new')]"/>
+				<filter name="state_in_progress" string="In Progress" domain="[('state', '=', 'in_progress')]"/>
+				<filter name="state_completed" string="Completed" domain="[('state', '=', 'completed')]"/>
+
+				<filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+				<filter name="group_date" string="Date" context="{'group_by': 'due_date'}"/>
+				<filter name="group_assign" string="Assign To" context="{'group_by': 'assign_to_id'}"/>
+			</search>
+		</field>
+	</record>
+
+	<record  id="todo_task_action"  model="ir.actions.act_window">
+		<field name="name">ToDo Task</field>
+		<field name="res_model">todo.task</field>
+	</record>
+
+	<menuitem
+			id="all_task_menu_item"
+			name="All Tasks"
+			parent="todo_menu"
+			action="todo_task_action"
+	/>
+</odoo>
