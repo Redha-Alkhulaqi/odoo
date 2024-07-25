@@ -20,7 +20,7 @@
         'reports/property_report.xml',
     ],
     'assets': {
-        'web.assets_backend': ['property/static/src/css/property.css']
+        'web.assets_backend': ['property/static/src/css/todo_task.css']
     },
     'application': True,
 }
