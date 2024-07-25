@@ -49,7 +49,7 @@
                         </thead>
                         <tbody>
                             <td>Owner</td>
-                            <td><t t-esc="o.owner_id"/></td>
+                            <td><t t-esc="o.owner_id.name"/></td>
                             <td>Phone</td>
                             <td><t t-esc="o.owner_phone"/></td>
                         </tbody>
