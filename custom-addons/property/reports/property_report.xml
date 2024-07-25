@@ -22,6 +22,7 @@
                         }
                         table th {
                         border:1px solid #b3adad;
+                        text-align:center;
                         padding:5px;
                         background: #f0f0f0;
                         color: #313030;
@@ -64,7 +65,7 @@
                             <t t-foreach="o.line_ids" t-as="line">
                                 <tr>
                                     <td>
-                                        <t t-esc="line.description"/>
+                                        <span t-field="line.description"/>
                                     </td>
                                     <td>
                                         <t t-esc="line.area"/>
