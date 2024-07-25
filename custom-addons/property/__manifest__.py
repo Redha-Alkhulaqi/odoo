@@ -7,7 +7,7 @@
     'description': """
     Description text
     """,
-    # data files always loaded at installation
+
     'data': [
         'security/ir.model.access.csv',
         'views/base_menu.xml',
@@ -15,7 +15,6 @@
         'views/owner_view.xml',
         'views/tag_view.xml',
         'views/sale_order_view.xml',
-       #'views/res_partner_view.xml',
         'views/building_view.xml',
         'reports/property_report.xml',
     ],
