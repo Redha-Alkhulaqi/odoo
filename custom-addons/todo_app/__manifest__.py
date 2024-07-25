@@ -1,7 +1,7 @@
 {
     'name': "To-Do App",
     'version': '1.0',
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'author': "Electron Technology",
     'category': '',
     'description': """

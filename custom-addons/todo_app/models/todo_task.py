@@ -2,7 +2,8 @@ from odoo import models, fields
 
 class TodoTask(models.Model):
     _name = 'todo.task'
-
+    _description = 'Task'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     name = fields.Char('Task Name')
     due_date = fields.Date()
     description = fields.Text()
