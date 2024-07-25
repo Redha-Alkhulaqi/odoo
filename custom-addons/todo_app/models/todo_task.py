@@ -12,4 +12,16 @@ class TodoTask(models.Model):
         ('new', 'New'),
         ('in_progress', 'In Progrees'),
         ('completed', 'Completed'),
-    ])
+    ], default='new')
+
+    def action_in_progress(self):
+        for rec in self:
+            rec.state = 'in_progress'
+
+    def action_new(self):
+        for rec in self:
+            rec.state = 'new'
+
+    def action_completed(self):
+        for rec in self:
+            rec.state = 'completed'
