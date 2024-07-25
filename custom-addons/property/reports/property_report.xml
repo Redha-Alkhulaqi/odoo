@@ -39,9 +39,9 @@
                             <th colspan="4">General Information</th>
                         </thead>
                         <td>Name</td>
-                        <td></td>
+                        <td><t t-esc="o.name"/></td>
                         <td>Postcode</td>
-                        <td></td>
+                        <td><t t-esc="o.postcode"/></td>
                     </table>
                 </t>
             </t>
