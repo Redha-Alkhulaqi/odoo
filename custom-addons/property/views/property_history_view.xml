@@ -3,7 +3,7 @@
 		<field name="name">Property History Tree</field>
 		<field name="model">property.history</field>
 		<field name="arch"  type="xml">
-			<tree>
+			<tree create="False" edit="False" delete="False">
 				<field name="user_id"/>
 				<field name="property_id"/>
 				<field name="old_state"/>
@@ -16,7 +16,7 @@
 		<field name="name">Property History Form</field>
 		<field name="model">property.history</field>
 		<field name="arch" type="xml">
-			<form>
+			<form create="False" edit="False" delete="False">
 				<sheet>
 					<group>
 						<group>
