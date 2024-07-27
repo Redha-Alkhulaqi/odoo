@@ -83,6 +83,12 @@ class Property(models.Model):
             if rec.expected_selling_date and rec.expected_selling_date < fields.date.today():
                 rec.is_late = True
 
+    @api.model
+    def create(self, vals):
+        res = super(Property, self).create(vals)
+        if res.ref == 'New':
+            res.ref = self.env['ir.sequence'].next_by_code('property_seq')
+        return res
 
 class PropertyLine(models.Model):
     _name = 'property.line'
