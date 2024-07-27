@@ -2,6 +2,7 @@
     <menuitem
 			id="todo_root_menu"
 			name="To Do"
+			web_icon="todo_app,static/description/icon.png"
 	/>
     <menuitem
 			id="todo_menu"
