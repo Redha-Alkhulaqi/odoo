@@ -94,12 +94,6 @@ class Property(models.Model):
             res.ref = self.env['ir.sequence'].next_by_code('property_seq')
         return res
 
-    def write(self, vals):
-        res = super(Property, self).write(vals)
-        if res.ref == 'New':
-            res.ref = self.env['ir.sequence'].next_by_code('property_seq')
-        return res
-
     def create_history_record(self, old_state, new_state):
         for rec in self:
             rec.env['property.history'].create({
