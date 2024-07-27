@@ -33,7 +33,7 @@
 						</h1>
 						<label for="name"/>
 						<h3>
-							<field name="name"/>
+							<field name="name" readonly="state == 'closed'"/>
 						</h3>
 					</div>
 					<header>
@@ -47,27 +47,27 @@
 					</header>
 					<group>
 						<group string="General Info.">
-							<field name="date_availability" required="1"/>
-							<field name="expected_selling_date"/>
-							<field name="is_late" invisible="True"/>
-							<field name="postcode"/>
-							<field name="expected_price"/>
-							<field name="selling_price"/>
-							<field name="diff"/>
-							<field name="bedrooms"/>
-							<field name="living_area"/>
-							<field name="facades"/>
+							<field name="date_availability" required="1" readonly="state == 'closed'"/>
+							<field name="expected_selling_date" readonly="state == 'closed'"/>
+							<field name="is_late" invisible="True" readonly="state == 'closed'"/>
+							<field name="postcode" readonly="state == 'closed'"/>
+							<field name="expected_price" readonly="state == 'closed'"/>
+							<field name="selling_price" readonly="state == 'closed'"/>
+							<field name="diff" readonly="state == 'closed'"/>
+							<field name="bedrooms" readonly="state == 'closed'"/>
+							<field name="living_area" readonly="state == 'closed'"/>
+							<field name="facades" readonly="state == 'closed'"/>
 						</group>
 						<group string="Additional Info.">
-							<field name="owner_id"/>
-							<field name="owner_address"/>
-							<field name="owner_phone"/>
-							<field name="garden_area"/>
-							<field name="garden"/>
-							<field name="garage"/>
-							<field name="garden_orientation"/>
-							<field name="active"/>
-							<field name="tag_ids" widget="many2many_tags"/>
+							<field name="owner_id" readonly="state == 'closed'"/>
+							<field name="owner_address" readonly="state == 'closed'"/>
+							<field name="owner_phone" readonly="state == 'closed'"/>
+							<field name="garden_area" readonly="state == 'closed'"/>
+							<field name="garden" readonly="state == 'closed'"/>
+							<field name="garage" readonly="state == 'closed'"/>
+							<field name="garden_orientation" readonly="state == 'closed'"/>
+							<field name="active" readonly="state == 'closed'"/>
+							<field name="tag_ids" widget="many2many_tags" readonly="state == 'closed'">
 						</group>
 						<group>
 							<field name="description"/>
@@ -75,7 +75,7 @@
 					</group>
 					<notebook>
 						<page string="Bedrooms">
-							<field name="line_ids">
+							<field name="line_ids" readonly="state == 'closed'">
 								<tree editable="bottom">
 									<field name="description"/>
 									<field name="area"/>
