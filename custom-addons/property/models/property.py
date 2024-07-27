@@ -52,9 +52,11 @@ class Property(models.Model):
     @api.onchange('expected_price')
     def _onchange_expected_price(self):
         for rec in self:
-            return {
+            if rec.expected_price < 0:
+                return {
                 'warning': {'title': 'warning', 'message': 'negative value', 'type': 'notification'}
-            }
+                }
+
     @api.constrains('bedrooms')
     def _check_bedrooms_greater_zero(self):
         for rec in self:
