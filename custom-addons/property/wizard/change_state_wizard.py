@@ -11,4 +11,6 @@ class ChangeState(models.TransientModel):
     reason = fields.Char()
 
     def action_confirm(self):
-        print("inside confirm action")
+        if self.property_id.state == 'closed':
+            self.property_id.state = self.state
+            self.property_id.create_history_record('closed', self.state, self.reason)

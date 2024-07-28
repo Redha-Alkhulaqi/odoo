@@ -96,14 +96,14 @@ class Property(models.Model):
             res.ref = self.env['ir.sequence'].next_by_code('property_seq')
         return res
 
-    def create_history_record(self, old_state, new_state):
+    def create_history_record(self, old_state, new_state, reason):
         for rec in self:
             rec.env['property.history'].create({
                 'user_id': rec.env.uid,
                 'property_id': rec.id,
                 'old_state': old_state,
                 'new_state': new_state,
-
+                'reason': reason or "",
             })
 
     def action_open_change_state_wizard(self):
