@@ -65,22 +65,22 @@ class Property(models.Model):
 
     def action_draft(self):
         for rec in self:
-            rec.create_history_record(rec.state, 'draft')
+            rec.create_history_record(rec.state, 'draft', '')
             rec.state = 'draft'
 
     def action_pending(self):
         for rec in self:
-            rec.create_history_record(rec.state, 'pending')
+            rec.create_history_record(rec.state, 'pending', '')
             rec.state = 'pending'
 
     def action_sold(self):
         for rec in self:
-            rec.create_history_record(rec.state, 'sold')
+            rec.create_history_record(rec.state, 'sold', '')
             rec.state = 'sold'
 
     def action_closed(self):
         for rec in self:
-            rec.create_history_record(rec.state, 'closed')
+            rec.create_history_record(rec.state, 'closed', '')
             rec.state = 'closed'
 
     def check_expected_selling_date(self):
