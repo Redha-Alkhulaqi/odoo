@@ -13,5 +13,6 @@
 			id="configration_menu"
 			name="Configration"
 			parent="real_estate_root_menu"
+			groups="property.property_manager_group"
     />
 </odoo>

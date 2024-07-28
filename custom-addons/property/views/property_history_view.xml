@@ -40,8 +40,9 @@
 	</record>
 
 	<menuitem id="properties_history_menu_item"
-	name="History"
-	parent="properties_menu"
-	action="property_history_action"
+			name="History"
+			parent="properties_menu"
+			action="property_history_action"
+			groups="property.property_manager_group"
 	/>
 </odoo>
