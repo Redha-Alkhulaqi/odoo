@@ -89,6 +89,10 @@ class Property(models.Model):
             if rec.expected_selling_date and rec.expected_selling_date < fields.date.today():
                 rec.is_late = True
 
+    def action(self):
+        print([('name', '=' ,'Property1'), ()])
+
+
     @api.model
     def create(self, vals):
         res = super(Property, self).create(vals)
