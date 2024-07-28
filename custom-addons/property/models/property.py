@@ -106,6 +106,11 @@ class Property(models.Model):
 
             })
 
+    def action_open_change_state_wizard(self):
+        action = self.env['ir.actions.actions']._for_xml_id('property.change_state_wizard_action')
+        action['context'] = {'default_property_id': self.id}
+        return action
+
 class PropertyLine(models.Model):
     _name = 'property.line'
 
