@@ -79,7 +79,7 @@
 						<page string="Bedrooms">
 							<field name="line_ids" readonly="state == 'closed'">
 								<tree editable="bottom">
-									<field name="description" groups="property.property_manager_group"/>
+									<field name="description"/>
 									<field name="area"/>
 								</tree>
 							</field>
