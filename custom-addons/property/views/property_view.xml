@@ -29,6 +29,7 @@
 					<widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
 					<widget name="web_ribbon" title="Sold" bg_color="text-bg-success" invisible="state != 'sold'"/>
 					<widget name="web_ribbon" title="Closed" bg_color="text-bg-secondary" invisible="state = 'closed'"/>
+
 					<header>
 						<button name="action" type="object" class="btn-primary" string="Action"/>
 						<button name="action_draft" type="object" class="btn-primary" string="Set To Draft"
