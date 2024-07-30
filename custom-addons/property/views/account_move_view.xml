@@ -5,8 +5,7 @@
 		<field name="inherit_id" ref="account.view_move_form"/>
 		<field name="arch" type="xml">
 			<xpath expr="//header" position="inside">
-				<button name="action_do_something" string="Do something" type="object"
-						class="btn-primary"/>
+				<button name="action_do_something" string="Do something" type="object" class="btn-primary"/>
 			</xpath>
 		</field>
 	</record>
