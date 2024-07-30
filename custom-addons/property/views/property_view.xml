@@ -26,6 +26,11 @@
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
+					<div name="button_box" class="oe_button_box">
+						<button name="action_open_related_owner"
+								type="object" icon="fa-user" string="Owner"
+								invisible="not owner_id"/>
+					</div>
 					<widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
 					<widget name="web_ribbon" title="Sold" bg_color="text-bg-success" invisible="state != 'sold'"/>
 					<widget name="web_ribbon" title="Closed" bg_color="text-bg-secondary" invisible="state != 'closed'"/>

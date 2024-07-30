@@ -115,6 +115,13 @@ class Property(models.Model):
         action['context'] = {'default_property_id': self.id}
         return action
 
+    def action_open_related_owner(self):
+        action = self.env['ir.actions.actions']._for_xml_id('property.owner_action')
+        view_id = self.env.ref('property.owner_view_form').id
+        action['res_id'] = self.owner_id.id
+        action['views'] = [[view_id, 'from']]
+        return action
+
 class PropertyLine(models.Model):
     _name = 'property.line'
 
