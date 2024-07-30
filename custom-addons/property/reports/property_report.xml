@@ -37,7 +37,7 @@
                     </style>
                     <table>
                         <thead>
-                            <th style="font-family: 'EduAUVICWANTHand-SemiBold';" colspan="6">General Information</th>
+                            <th style="font-family: 'EduAUVICWANTHand-SemiBold';" colspan="4">General Information</th>
                         </thead>
                         <tbody>
                             <td>Name</td>
@@ -46,7 +46,7 @@
                             <td><t t-esc="o.postcode"/></td>
                         </tbody>
                         <thead>
-                            <th colspan="4">Additional Information</th>
+                            <th style="font-family: 'EduAUVICWANTHand-SemiBold';" colspan="4">Additional Information</th>
                         </thead>
                         <tbody>
                             <td>Owner</td>
@@ -58,8 +58,8 @@
                     <br/>
                     <table>
                         <thead>
-                            <th>Description</th>
-                            <th>Area(m2)</th>
+                            <th style="font-family: 'EduAUVICWANTHand-SemiBold';">Description</th>
+                            <th style="font-family: 'EduAUVICWANTHand-SemiBold';">Area(m2)</th>
                         </thead>
                         <tbody>
                             <t t-foreach="o.line_ids" t-as="line">
