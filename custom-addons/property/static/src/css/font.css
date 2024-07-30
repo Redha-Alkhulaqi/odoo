@@ -2,3 +2,8 @@
 font-family:"EduAUVICWANTHand-Bold"
 src: url(\property\static\src\fonts\EduAUVICWANTHand-Bold.ttf)
 }
+
+@font-face {
+font-family:"EduAUVICWANTHand-SemiBold"
+src: url(\property\static\src\fonts\EduAUVICWANTHand-SemiBold.ttf)
+}

@@ -37,7 +37,7 @@
                     </style>
                     <table>
                         <thead>
-                            <th colspan="4">General Information</th>
+                            <th style="font-family: 'EduAUVICWANTHand-SemiBold';" colspan="4">General Information</th>
                         </thead>
                         <tbody>
                             <td>Name</td>
