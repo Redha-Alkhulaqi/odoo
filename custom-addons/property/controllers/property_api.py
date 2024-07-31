@@ -8,5 +8,6 @@ class PropertyApi(http.Controller):
     def post_property(self):
         args = request.httprequest.data.decode()
         vals = json.loads(args)
-        print(vals)
+        res = request.env['property'].sudo().create(vals)
+        print(res)
 
