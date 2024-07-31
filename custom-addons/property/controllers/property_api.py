@@ -10,7 +10,7 @@ class PropertyApi(http.Controller):
         vals = json.loads(args)
         res = request.env['property'].sudo().create(vals)
         if res:
-            return {
+            return [{
                   "message": "Property has been created successfully"
-            }
+            }]
 
