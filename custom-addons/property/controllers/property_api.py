@@ -9,5 +9,8 @@ class PropertyApi(http.Controller):
         args = request.httprequest.data.decode()
         vals = json.loads(args)
         res = request.env['property'].sudo().create(vals)
-        print(res)
+        if res:
+            return request.make_json_response({
+                  "message": "Property has been created successfully"
+            }, status=200)
 
