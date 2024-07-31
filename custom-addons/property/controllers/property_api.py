@@ -4,7 +4,7 @@ from odoo.http import request
 
 class PropertyApi(http.Controller):
 
-    @http.route("/v1/property", methods=["POST"], type="http", auth="none", csrf=False)
+    @http.route("/v1/property", methods=["POST"], type="json", auth="none", csrf=False)
     def post_property(self):
         args = request.httprequest.data.decode()
         vals = json.loads(args)
