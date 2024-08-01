@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class Building(models.Model):
     _name = 'building'
     _description = 'Building Record'

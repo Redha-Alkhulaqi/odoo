@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class TodoTask(models.Model):
     _name = 'todo.task'
     _description = 'Task'

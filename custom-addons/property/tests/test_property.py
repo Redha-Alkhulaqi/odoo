@@ -1,6 +1,7 @@
 from odoo.tests.common import TransactionCase
 from odoo import fields
 
+
 class TestProperty(TransactionCase):
     
     def setup(self, *args, **kwargs):
