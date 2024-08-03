@@ -46,4 +46,4 @@ class PropertyApi(http.Controller):
             "message": "Property has been updated successfully",
             "id": property_id.id,
             "name": property_id.name,
-        }, status=201)
+        }, status=200)
