@@ -35,3 +35,9 @@ class PropertyApi(http.Controller):
             return [{
                   "message": "Property has been created successfully"
             }]
+
+    @http.route("/v1/property/<int:property_id>", methods=["PUT"], type="http", auth="none", csrf=False)
+    def update_property(self, property_id):
+        property_id = request.env['property'].sudo().search(['id', '=', property_id])
+        print(property_id)
+        pass
