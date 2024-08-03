@@ -9,6 +9,10 @@ class PropertyApi(http.Controller):
     def post_property(self):
         args = request.httprequest.data.decode()
         vals = json.loads(args)
+        if not vals.get('name'):
+            return request.make_json_response({
+                "message": "Name is required!",
+            }, status=400)
         try:
             res = request.env['property'].sudo().create(vals)
             if res:
