@@ -40,5 +40,7 @@ class PropertyApi(http.Controller):
     def update_property(self, property_id):
         property_id = request.env['property'].sudo().search([('id', '=', property_id)])
         args = request.httprequest.data.decode()
+        print(args)
         vals = json.loads(args)
+        print(vals)
         property_id.write(vals)
