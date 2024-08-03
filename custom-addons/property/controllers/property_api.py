@@ -11,12 +11,14 @@ class PropertyApi(http.Controller):
         vals = json.loads(args)
         res = request.env['property'].sudo().create(vals)
         if res:
-            return [{
-                  "message": "Property has been created successfully"
-            }]
+            return request.make_json_response({
+                "message": "Property has been created successfully",
+                "id": res.id,
+                "name": res.name,
+            }, status=201)
 
-    @http.route("/v1/property", methods=["POST"], type="json", auth="none", csrf=False)
-    def post_property(self):
+    @http.route("/v1/property/json", methods=["POST"], type="json", auth="none", csrf=False)
+    def post_property_json(self):
         args = request.httprequest.data.decode()
         vals = json.loads(args)
         res = request.env['property'].sudo().create(vals)
