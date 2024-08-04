@@ -97,7 +97,7 @@ class PropertyApi(http.Controller):
             }, status=400)
 
     @http.route("/v1/properties", methods=["GET"], type="http", auth="none", csrf=False)
-    def get_property_list(self, property_id):
+    def get_property_list(self):
         try:
             property_ids = request.env['property'].sudo().search([])
             if not property_ids:
