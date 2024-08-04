@@ -1,4 +1,5 @@
 import json
+from urllib.parse import parse_qs
 from odoo import http
 from odoo.http import request
 
@@ -99,7 +100,11 @@ class PropertyApi(http.Controller):
     @http.route("/v1/properties", methods=["GET"], type="http", auth="none", csrf=False)
     def get_property_list(self):
         try:
-            property_ids = request.env['property'].sudo().search([])
+            params = parse_qs(request.httprequest.query_string.decode('utf-8'))
+            property_domain = []
+            if params.get('state'):
+                property_domain += [('state', '=', params.get('state')[0])]
+            property_ids = request.env['property'].sudo().search(property_domain)
             if not property_ids:
                 return request.make_json_response({
                     "Error": "There are not records!",
