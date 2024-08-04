@@ -95,3 +95,25 @@ class PropertyApi(http.Controller):
             return request.make_json_response({
                 "Error": error,
             }, status=400)
+
+    @http.route("/v1/properties", methods=["GET"], type="http", auth="none", csrf=False)
+    def get_property_list(self, property_id):
+        try:
+            property_ids = request.env['property'].sudo().search([])
+            if not property_ids:
+                return request.make_json_response({
+                    "Error": "There are not records!",
+                }, status=400)
+            return request.make_json_response([{
+                "id": property_id.id,
+                "ref": property_id.ref,
+                "name": property_id.name,
+                "description": property_id.description,
+                "postcode": property_id.postcode,
+                "date_availability": property_id.date_availability,
+                "expected_selling_date": property_id.expected_selling_date,
+            } for property_id in property_ids], status=200)
+        except Exception as error:
+            return request.make_json_response({
+                "Error": error,
+            }, status=400)
