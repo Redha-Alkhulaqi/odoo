@@ -4,6 +4,21 @@ from odoo import http
 from odoo.http import request
 
 
+def invalid_response(error, status):
+    response_body = {
+        'error': error,
+    }
+    return request.make_json_response(response_body, status=status)
+
+
+def valid_response(data, status):
+    response_body = {
+        'message': "successful",
+        'data': data,
+    }
+    return request.make_json_response(response_body, status=status)
+
+
 class PropertyApi(http.Controller):
 
     @http.route("/v1/property", methods=["POST"], type="http", auth="none", csrf=False)
@@ -63,10 +78,8 @@ class PropertyApi(http.Controller):
         try:
             property_id = request.env['property'].sudo().search([('id', '=', property_id)])
             if not property_id:
-                return request.make_json_response({
-                    "Error": "ID dose not exist!",
-                }, status=400)
-            return request.make_json_response({
+                return invalid_response("ID dose not exist!", status=400)
+            return valid_response({
                 "id": property_id.id,
                 "ref": property_id.ref,
                 "name": property_id.name,
@@ -109,7 +122,7 @@ class PropertyApi(http.Controller):
                 return request.make_json_response({
                     "Error": "There are not records!",
                 }, status=400)
-            return request.make_json_response([{
+            return valid_response([{
                 "id": property_id.id,
                 "ref": property_id.ref,
                 "name": property_id.name,
