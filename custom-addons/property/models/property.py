@@ -126,8 +126,14 @@ class Property(models.Model):
 
     def get_properties(self):
         payload = dict()
-        response = requests.get('http://odoo-srv/v1/properties', data=payload)
-        print(response.content)
+        try:
+            response = requests.get('http://odoo-srv/v1/properties', data=payload)
+            if response.status_code == 200:
+                print("successful")
+            else:
+                print("fail")
+        except Exception as error:
+            raise ValidationError(str(error))
 
 class PropertyLine(models.Model):
     _name = 'property.line'
