@@ -37,6 +37,7 @@
 
 					<header>
 						<button name="action" type="object" class="btn-primary" string="Action"/>
+						<button name="get_properties" type="object" class="btn-primary" string="Test Call GET Properties"/>
 						<button name="action_draft" type="object" class="btn-primary" string="Set To Draft"
 								invisible="state in ('draft','closed')"/>
 						<button name="action_pending" type="object" class="btn-secondary" string="Pending"

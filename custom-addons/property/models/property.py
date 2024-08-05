@@ -1,5 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from datetime import timedelta
+import requests
 
 class Property(models.Model):
     _name = 'property'
@@ -121,6 +123,9 @@ class Property(models.Model):
         action['res_id'] = self.owner_id.id
         action['views'] = [[view_id, 'form']]
         return action
+
+    def get_properties(self):
+        print("inside")
 
 class PropertyLine(models.Model):
     _name = 'property.line'
