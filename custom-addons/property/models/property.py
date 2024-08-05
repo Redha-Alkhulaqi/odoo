@@ -126,7 +126,8 @@ class Property(models.Model):
 
     def get_properties(self):
         payload = dict()
-        requests.get('http://odoo-srv/v1/properties', data=payload)
+        response = requests.get('http://odoo-srv/v1/properties', data=payload)
+        print(response.content)
 
 class PropertyLine(models.Model):
     _name = 'property.line'
