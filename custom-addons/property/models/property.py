@@ -125,7 +125,8 @@ class Property(models.Model):
         return action
 
     def get_properties(self):
-        print("inside")
+        payload = dict()
+        requests.get('http://odoo-srv/v1/properties', data=payload)
 
 class PropertyLine(models.Model):
     _name = 'property.line'
