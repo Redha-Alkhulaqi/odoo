@@ -13,5 +13,6 @@
         "security/ir.model.access.csv",
         "views/menus.xml",
     ],
+    "post_init_hook": "post_init_hook",
     'application': True,
 }
