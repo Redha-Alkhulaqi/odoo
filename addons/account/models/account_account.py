@@ -907,7 +907,9 @@ class AccountGroup(models.Model):
             company_ids = account_ids.company_id.root_id.ids
             account_ids = account_ids.ids
         else:
-            company_ids = self.company_id.ids
+            company_ids = []
+            for company in self.company_id:
+                company_ids.extend(company._accessible_branches().ids)
             account_ids = []
         if not company_ids and not account_ids:
             return
@@ -964,13 +966,13 @@ class AccountGroup(models.Model):
                    AND parent.id != child.id
                    AND parent.company_id = child.company_id
                  WHERE child.company_id IN %s
-                   AND child.parent_id IS DISTINCT FROM parent.id -- IMPORTANT avoid to update if nothing changed
               ORDER BY child.id, char_length(parent.code_prefix_start) DESC
             )
             UPDATE account_group child
                SET parent_id = relation.parent_id
               FROM relation
              WHERE child.id = relation.child_id
+               AND child.parent_id IS DISTINCT FROM relation.parent_id
          RETURNING child.id
         """, tuple(company_ids))
         self.env.cr.execute(query)
