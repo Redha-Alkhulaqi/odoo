@@ -446,7 +446,7 @@ class Import(models.TransientModel):
             return self._read_xls(options)
 
         import openpyxl.cell.cell as types
-        book = load_workbook(io.BytesIO(self.file or b''), read_only=True, data_only=True)
+        book = load_workbook(io.BytesIO(self.file or b''), data_only=True)
         sheets = options['sheets'] = book.sheetnames
         sheet_name = options['sheet'] = options.get('sheet') or sheets[0]
         sheet = book[sheet_name]
@@ -459,7 +459,9 @@ class Import(models.TransientModel):
                         _("Invalid cell value at row %(row)s, column %(col)s: %(cell_value)s", row=rowx, col=colx, cell_value=cell.value)
                     )
 
-                if isinstance(cell.value, float):
+                if cell.value is None:
+                    values.append('')
+                elif isinstance(cell.value, float):
                     if cell.value % 1 == 0:
                         values.append(str(int(cell.value)))
                     else:
