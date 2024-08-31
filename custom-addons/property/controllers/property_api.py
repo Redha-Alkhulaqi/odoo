@@ -41,6 +41,8 @@ class PropertyApi(http.Controller):
         except Exception as error:
             return invalid_response(error, status=400)
 
+
+
     @http.route("/v1/property/json", methods=["POST"], type="json", auth="none", csrf=False)
     def post_property_json(self):
         args = request.httprequest.data.decode()

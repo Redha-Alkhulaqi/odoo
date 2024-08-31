@@ -1,0 +1,16 @@
+{
+    'name': "Return Merchandise Authorization Management",
+    "summary": "Return Merchandise Authorization (RMA)",
+    'version': '1.0',
+    'depends': ['base'],
+    'author': "Electron Technology",
+    'category': 'Sales',
+    'description': """
+    Electron Technology's Return Merchandise Authorization (RMA) module provides companies with an easy, efficient means of tracking returned merchandise. It also includes flexible methods of dealing with the return or exchange of merchandise.
+    """,
+
+    'data': [
+
+    ],
+    'application': True,
+}
