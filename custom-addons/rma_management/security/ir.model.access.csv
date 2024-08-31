@@ -1,1 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_move,access_account_move,model_account_move,,1,1,1,1
+access_sale_order,access_sale_order,model_sale_order,,1,1,1,1
+access_sale_order_line,access_sale_order_line,model_sale_order_line,,1,1,1,1
