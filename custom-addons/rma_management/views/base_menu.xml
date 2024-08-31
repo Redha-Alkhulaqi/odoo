@@ -1,0 +1,12 @@
+<odoo>
+    <menuitem
+			id="return_merchandise_authorization_root_menu"
+			name="Return Merchandise Authorization"
+			web_icon="rma_management,static/description/icon.png"
+    />
+    <menuitem
+			id="rma_configuration_menu"
+			parent="return_merchandise_authorization_root_menu"
+			name="Configuration"
+    />
+</odoo>

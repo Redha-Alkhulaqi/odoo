@@ -10,7 +10,7 @@
     """,
 
     'data': [
-
+        "views/base_menu.xml",
     ],
     'application': True,
 }
