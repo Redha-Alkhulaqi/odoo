@@ -10,6 +10,8 @@
     """,
 
     'data': [
+        "views/report_rma.xml",
+        "report/report.xml",
         "security/ir.model.access.csv",
         "wizard/stock_picking_return_views.xml",
         "wizard/rma_delivery_views.xml",
