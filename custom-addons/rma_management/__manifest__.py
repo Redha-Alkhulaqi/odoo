@@ -10,7 +10,6 @@
     """,
 
     'data': [
-        "views/report_rma.xml",
         "security/ir.model.access.csv",
         "views/menus.xml",
     ],
