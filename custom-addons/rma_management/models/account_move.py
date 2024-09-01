@@ -1,27 +1,52 @@
-from odoo import models
+from odoo import _, fields, models
+from odoo.exceptions import ValidationError
+from odoo.tools import float_compare
 
 
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    def button_cancel(self):
-        """If this a refund linked to an RMA, undo the linking of the reception move for
-        having proper quantities and status.
-        """
-        for rma in self.env["rma"].sudo().search([("refund_id", "in", self.ids)]):
-            if rma.sale_line_id:
-                rma._unlink_refund_with_reception_move()
-        return super().button_cancel()
+    def _check_rma_invoice_lines_qty(self):
+        """We can't refund a different qty than the stated in the RMA.
+        Extend to change criteria"""
+        precision = self.env["decimal.precision"].precision_get(
+            "Product Unit of Measure"
+        )
+        return (
+            self.sudo()
+            .mapped("invoice_line_ids")
+            .filtered(
+                lambda r: (
+                    r.rma_id
+                    and float_compare(r.quantity, r.rma_id.product_uom_qty, precision)
+                    < 0
+                )
+            )
+        )
 
-    def button_draft(self):
-        """Relink the reception move when passing the refund again to draft."""
-        for rma in self.env["rma"].sudo().search([("refund_id", "in", self.ids)]):
-            if rma.sale_line_id:
-                rma._link_refund_with_reception_move()
-        return super().button_draft()
+    def action_post(self):
+        """Avoids to validate a refund with less quantity of product than
+        quantity in the linked RMA.
+        """
+        if self._check_rma_invoice_lines_qty():
+            raise ValidationError(
+                _(
+                    "There is at least one invoice lines whose quantity is "
+                    "less than the quantity specified in its linked RMA."
+                )
+            )
+        return super().action_post()
 
     def unlink(self):
-        """If the invoice is removed, rollback the quantities correction"""
-        for rma in self.invoice_line_ids.rma_id.filtered("sale_line_id"):
-            rma._unlink_refund_with_reception_move()
+        rma = self.mapped("invoice_line_ids.rma_id")
+        rma.write({"state": "received"})
         return super().unlink()
+
+
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+
+    rma_id = fields.Many2one(
+        comodel_name="rma",
+        string="RMA",
+    )
