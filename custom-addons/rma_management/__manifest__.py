@@ -2,7 +2,7 @@
     'name': "Return Merchandise Authorization Management",
     "summary": "Return Merchandise Authorization (RMA)",
     'version': '1.0',
-    'depends': ["stock_account"],
+    'depends': ['base', 'sale_management', 'account_accountant', 'mail', "stock_account"],
     'author': "Electron Technology",
     'category': 'Sales',
     'description': """
