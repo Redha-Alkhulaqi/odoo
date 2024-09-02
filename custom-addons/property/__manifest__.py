@@ -4,6 +4,7 @@
     'depends': ['base', 'sale_management', 'account_accountant', 'mail'],
     'author': "Electron Technology",
     'category': 'Sales',
+    'license': 'LGPL-3',
     'description': """
     Description text
     """,

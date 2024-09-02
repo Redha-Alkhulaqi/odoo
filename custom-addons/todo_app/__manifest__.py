@@ -4,6 +4,7 @@
     'depends': ['base', 'mail'],
     'author': "Electron Technology",
     'category': '',
+    'license': 'LGPL-3',
     'description': """
     Description text
     """,
