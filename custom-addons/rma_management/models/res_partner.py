@@ -4,6 +4,7 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    state = fields.Char()
     rma_ids = fields.One2many(
         comodel_name="rma",
         inverse_name="partner_id",
