@@ -6,6 +6,7 @@ class ResPartner(models.Model):
 
     test1 = fields.Char()
     test2 = fields.Char()
+    test3 = fields.Char()
     rma_ids = fields.One2many(
         comodel_name="rma",
         inverse_name="partner_id",
