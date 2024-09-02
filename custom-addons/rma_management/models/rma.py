@@ -4,8 +4,8 @@ from itertools import groupby
 from odoo import _, api, fields, models
 from odoo.exceptions import AccessError, ValidationError
 from odoo.tools import html2plaintext
-
 from odoo.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
+
 
 _logger = logging.getLogger(__name__)
 
@@ -15,7 +15,6 @@ class Rma(models.Model):
     _description = "RMA"
     _order = "date desc, priority"
     _inherit = ["mail.thread", "portal.mixin", "mail.activity.mixin"]
-
 
     sent = fields.Boolean()
     name = fields.Char(
@@ -213,8 +212,6 @@ class Rma(models.Model):
             "cancelled": [("readonly", True)],
         },
     )
-
-
     location_id = fields.Many2one(
         comodel_name="stock.location",
         domain='_domain_location_id',
@@ -232,7 +229,6 @@ class Rma(models.Model):
         string="Reception move",
         copy=False,
     )
-    # Refund fields
     refund_id = fields.Many2one(
         comodel_name="account.move",
         readonly=True,
@@ -291,7 +287,6 @@ class Rma(models.Model):
     uom_category_id = fields.Many2one(
         related="product_id.uom_id.category_id", string="Category UoM"
     )
-    # Split fields
     can_be_split = fields.Boolean(
         compute="_compute_can_be_split",
     )
