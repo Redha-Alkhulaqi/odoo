@@ -10,10 +10,7 @@ class RmaTeam(models.Model):
     _order = "sequence, name"
 
     sequence = fields.Integer()
-    name = fields.Char(
-        required=True,
-        translate=True,
-    )
+    name = fields.Char(required=True)
     active = fields.Boolean(
         default=True,
         help="If the active field is set to false, it will allow you "

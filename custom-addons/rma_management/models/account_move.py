@@ -46,7 +46,4 @@ class AccountMove(models.Model):
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    rma_id = fields.Many2one(
-        comodel_name="rma",
-        string="RMA",
-    )
+    rma_id = fields.Many2one('rma', string="RMA")

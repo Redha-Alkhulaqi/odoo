@@ -6,7 +6,7 @@
     'website': 'https://electron.sa',
     'author': 'Electron Technology',
     'license': 'LGPL-3',
-    'depends': ['base', 'sale_management', 'account_accountant', 'mail'],
+    'depends': ['base', 'account_accountant', 'stock', 'mail'],
     "data": [
     ],
     "application": True,

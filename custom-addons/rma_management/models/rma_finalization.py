@@ -13,7 +13,7 @@ class RmaFinalization(models.Model):
         translate=True,
         copy=False,
     )
-    company_id = fields.Many2one(comodel_name="res.company")
+    company_id = fields.Many2one('res.company')
 
     _sql_constraints = [
         (

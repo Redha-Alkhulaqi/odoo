@@ -313,6 +313,9 @@ class Rma(models.Model):
         copy=False,
     )
 
+
+
+
     def _compute_delivery_picking_count(self):
         for rma in self:
             rma.delivery_picking_count = len(rma.delivery_move_ids.picking_id)
