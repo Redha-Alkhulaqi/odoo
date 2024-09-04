@@ -5,7 +5,7 @@
     'category': 'Sales',
     'website': 'https://electron.sa',
     'author': 'Electron Technology',
-    'depends': ['account_accountant', 'sale_management', 'stock_account', 'stock', 'mail', 'web'],
+    'depends': ['sale_management', 'stock_account', 'stock', 'mail', 'web'],
     "data": [
         "views/report_rma.xml",
         "report/report.xml",
