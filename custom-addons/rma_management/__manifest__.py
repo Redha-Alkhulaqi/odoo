@@ -1,12 +1,11 @@
 {
     'name': 'Return Merchandise Authorization Management',
     'summary': 'Return Merchandise Authorization (RMA)',
-    'version': '17.0.1.0.0',
+    'version': '17.0.1.0',
     'category': 'Sales',
     'website': 'https://electron.sa',
     'author': 'Electron Technology',
-    'license': 'LGPL-3',
-    'depends': ['base', 'stock_account', 'account_accountant', 'stock', 'mail', 'web'],
+    'depends': ['account_accountant', 'sale_management', 'stock_account', 'stock', 'mail', 'web'],
     "data": [
         "views/report_rma.xml",
         "report/report.xml",
