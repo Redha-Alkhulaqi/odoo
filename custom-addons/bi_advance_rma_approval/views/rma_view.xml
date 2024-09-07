@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherit_view_rma_order_form" model="ir.ui.view">
+            <field name="name">rma.main.form</field>
+            <field name="model">rma.main</field>
+            <field name="inherit_id" ref="bi_rma.view_rma_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_approve']" position="attributes">
+                    <attribute name="groups">bi_advance_rma_approval.group_rma_approver</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_reject']" position="attributes">
+                    <attribute name="groups">bi_advance_rma_approval.group_rma_approver</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_move_to_draft']" position="attributes">
+                    <attribute name="groups">bi_advance_rma_approval.group_rma_approver</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_send_rma']" position="attributes">
+                    <attribute name="groups">bi_advance_rma_approval.group_rma_approver</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_close']" position="attributes">
+                    <attribute name="groups">bi_advance_rma_approval.group_rma_approver</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem
+            id="bi_rma.menu_rma_order"
+            name="RMA"
+            web_icon="bi_rma,static/description/icon.png"
+            groups="bi_advance_rma_approval.group_rma_user,bi_advance_rma_approval.group_rma_approver"
+            sequence="31"/>
+    </data>
+</odoo>

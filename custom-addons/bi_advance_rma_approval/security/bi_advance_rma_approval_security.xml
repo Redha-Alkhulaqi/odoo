@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_rma_approval_role">
+            <field name="name">RMA Approval Role</field>
+            <field name="description">RMA Approval Role</field>
+        </record>
+        <record model="res.groups" id="group_rma_user">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_rma_approval_role"/>
+        </record>
+        <record id="group_rma_approver" model="res.groups">
+            <field name="name">Approver</field>
+            <field name="implied_ids" eval="[(4,ref('group_rma_user'))]"/>
+            <field name="category_id" ref="module_rma_approval_role"/>
+        </record>
+
+        <record id="rma_own_user_rule" model="ir.rule">
+            <field name="name">User own RMA</field>
+            <field ref="bi_rma.model_rma_main" name="model_id"/>
+            <field name="domain_force">['|',('responsible','=',user.id),('responsible','=',False)]</field>
+            <field name="groups" eval="[(4, ref('bi_advance_rma_approval.group_rma_user'))]"/>
+        </record>
+
+        <record id="rma_approver_rule" model="ir.rule">
+            <field name="name">Approver RMA</field>
+            <field ref="bi_rma.model_rma_main" name="model_id"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('bi_advance_rma_approval.group_rma_approver'))]"/>
+        </record>
+
+        <record id="rma_lines_own_user_rule" model="ir.rule">
+            <field name="name">User own RMA</field>
+            <field ref="bi_rma.model_rma_lines" name="model_id"/>
+            <field name="domain_force">['|',('rma_id.responsible','=',user.id),('rma_id.responsible','=',False)]</field>
+            <field name="groups" eval="[(4, ref('bi_advance_rma_approval.group_rma_user'))]"/>
+        </record>
+
+        <record id="rma_lines_approver_rule" model="ir.rule">
+            <field name="name">Approver RMA Lines</field>
+            <field ref="bi_rma.model_rma_lines" name="model_id"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('bi_advance_rma_approval.group_rma_approver'))]"/>
+        </record>
+    </data>
+</odoo>

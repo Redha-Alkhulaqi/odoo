@@ -1,0 +1,7 @@
+=> 17.0.0.1 :- Date 28 Mar 2024
+:- The creation of claims from picking was removed because it was automatically generated from RMA orders(RMA order picking = Done)
+
+17.0.0.2 ==> Fixed issue of when service product added in sale order and added that sale order in rma at that when we click on submit button Magento shipping charges realted error occur and also remove service product from rma lines.
+
+Version : 17.0.0.3 | Date : 17/May/2024
+=> Solved create method issue and warnings.

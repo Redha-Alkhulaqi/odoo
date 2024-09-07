@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inherit_view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="rma_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_orders" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field name="domain">[('rma_id', '!=', False)]</field>
+    </record>
+
+    <menuitem name="Orders"
+              id="menu_orders"
+              parent="menu_rma_order"
+              action="action_orders"
+              sequence="4"/>
+</odoo>

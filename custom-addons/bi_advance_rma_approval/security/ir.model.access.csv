@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bi_rma.access_rma_main,access_rma_main_user,bi_rma.model_rma_main,bi_advance_rma_approval.group_rma_user,1,1,1,0
+access_rma_main_approver,access_rma_main_approver,bi_rma.model_rma_main,bi_advance_rma_approval.group_rma_approver,1,1,1,1
+bi_rma.access_reject_reason,access_reject_reason_user,bi_rma.model_reject_reason,bi_advance_rma_approval.group_rma_user,1,0,0,0
+access_reject_reason_approver,access_reject_reason_approver,bi_rma.model_reject_reason,bi_advance_rma_approval.group_rma_approver,1,1,1,1
+bi_rma.access_rma_claim,access_rma_claim_user,bi_rma.model_rma_claim,bi_advance_rma_approval.group_rma_user,1,0,0,0
+access_rma_claim_approver,access_rma_claim_approver,bi_rma.model_rma_claim,bi_advance_rma_approval.group_rma_approver,1,1,1,1
+bi_rma.access_rma_reason,access_rma_reason_user,bi_rma.model_rma_reason,bi_advance_rma_approval.group_rma_user,1,0,0,0
+access_rma_reason_approver,access_rma_reason_approver,bi_rma.model_rma_reason,bi_advance_rma_approval.group_rma_approver,1,1,1,1

@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bi_rma.access_rma_main,access_rma_main,bi_rma.model_rma_main,base.group_user,1,1,1,1
+bi_rma.access_rma_lines,access_rma_lines,bi_rma.model_rma_lines,base.group_user,1,1,1,1
+bi_rma.access_rma_replace_order,access_rma_replace_order,bi_rma.model_rma_replace_order,base.group_user,1,1,1,1
+bi_rma.access_reject_reason,access_reject_reason,bi_rma.model_reject_reason,base.group_user,1,1,1,1
+bi_rma.access_rma_claim,access_rma_claim,bi_rma.model_rma_claim,base.group_user,1,1,1,1
+bi_rma.access_rma_reason,access_rma_reason,bi_rma.model_rma_reason,base.group_user,1,1,1,1
+bi_rma.access_return_order_line,access_return_order_line,bi_rma.model_return_order_line,base.group_user,1,1,1,1
+bi_rma.access_return_replace_order,access_return_replace_order,bi_rma.model_return_replace_order,base.group_user,1,1,1,1
+bi_rma.access_return_order,access_return_order,bi_rma.model_return_order,base.group_user,1,1,1,1

@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record id="gen_return_order_view_form" model="ir.ui.view">
+            <field name="name">wizard for Return Order </field>
+            <field name="model">return.order</field>
+            <field name="arch" type="xml">
+                <form string="Return Order">
+                    <sheet>
+                        <notebook>
+                            <page string="Return/Replacement/Cancel Products" >
+                                <field name = "rma_order_id" invisible = "1"/>
+                                <field name = "rma_type"  invisible = "1"/>
+                                <field name="rol_ids" >
+                                     <tree create="false" delete="false" edit="true" editable="bottom">
+                                        <field name ="rma_line_id" column_invisible= "1"/>
+                                        <field name ="tracking" column_invisible= "1"/>
+                                        <field name ="product_id" readonly="1" force_save="1"/>
+                                        <field name ="rma_reason_id" force_save="1" options="{'no_create': True, 'no_open': True}"/>
+                                        <field name ="reject_reason_id" force_save="1" domain="[('is_customer_rejection_reason','=',True)]" options="{'no_create': True, 'no_open': True}"/>
+                                        <field name ="delivery_qty"  readonly = '1' optional="show" force_save="1"/>
+                                        <field name ="pending_qty"  readonly = '1' optional="show" force_save="1"/>
+                                        <field name ="return_qty" force_save="1"/>
+                                        <field name ="recieved_qty"  column_invisible = "1"/>
+                                        <field name ="sale_line_id" column_invisible = "1"/>
+                                        <field name="is_new_line"  column_invisible = "1"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page name="Replace" string="New Product to Replace" >
+                                <field name = "rma_order_id"  invisible = "1"/>
+                                <field name = "is_service"   invisible = "1"/>
+                                <field name="replace_prd_ids" >
+                                    <tree create="true" delete="true" edit="true" editable="bottom">
+                                        <field name ="rma_id" column_invisible= "1"/>
+                                        <field name ="product_id" options="{'no_create': True,'no_edit': True,'no_open': True}"/>
+                                        <field name= "detailed_type" column_invisible = "1"/>
+                                        <field name ="qty" readonly="detailed_type == 'service'"  force_save="1"/>
+                                        <field name="product_price" readonly="detailed_type != 'service'"  force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button name="update_rma_lines" class="btn-primary" string="Apply" type="object"/>
+                         <button string="Close" class="btn-secondary" special="save" data-hotkey="v" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
