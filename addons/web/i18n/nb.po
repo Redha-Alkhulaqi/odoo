@@ -6,7 +6,7 @@
 # Thor Arne Hvidsten <thor.arne.hvidsten@gmail.com>, 2024
 # Cécile Collart <cco@odoo.com>, 2024
 # Thor Arne Hvidsten, 2024
-# Henrik Norlin <henrik@appstogrow.net>, 2024
+# Henrik Norlin <henrik@loym.com>, 2024
 # Eirik Halvorsen <eirik386@gmail.com>, 2024
 # Henning Fyllingsnes, 2024
 # Jorunn D. Newth, 2024
@@ -1234,7 +1234,7 @@ msgstr "Er du sikker på at du vil fjerne dette filteret?"
 #: code:addons/web/static/src/views/list/list_controller.js:0
 #, python-format
 msgid "Are you sure you want to delete these records?"
-msgstr ""
+msgstr "Er du sikker på at du vil slette disse postene?"
 
 #. module: web
 #. odoo-javascript
@@ -2035,7 +2035,7 @@ msgstr "Kontekst:"
 #: code:addons/web/static/src/views/fields/x2many/x2many_field.xml:0
 #, python-format
 msgid "Control panel buttons"
-msgstr ""
+msgstr "Kontrolpanel knapper"
 
 #. module: web
 #. odoo-javascript
@@ -3099,7 +3099,7 @@ msgstr ""
 #: code:addons/web/static/src/views/fields/boolean_favorite/boolean_favorite_field.js:0
 #, python-format
 msgid "Favorite"
-msgstr ""
+msgstr "Favoritt"
 
 #. module: web
 #. odoo-javascript
@@ -5417,7 +5417,7 @@ msgstr ""
 #: code:addons/web/static/src/views/fields/pdf_viewer/pdf_viewer_field.xml:0
 #, python-format
 msgid "PDF file"
-msgstr ""
+msgstr "PDF fil"
 
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.external_layout_striped
@@ -24812,7 +24812,7 @@ msgstr ""
 #: code:addons/web/static/src/core/emoji_picker/emoji_data.js:0
 #, python-format
 msgid "pick"
-msgstr ""
+msgstr "plukk"
 
 #. module: web
 #. odoo-javascript

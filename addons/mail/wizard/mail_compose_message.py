@@ -41,7 +41,7 @@ class MailComposer(models.TransientModel):
     _inherit = 'mail.composer.mixin'
     _description = 'Email composition wizard'
     _log_access = True
-    _batch_size = 500
+    _batch_size = 50
 
     @api.model
     def default_get(self, fields_list):
@@ -392,7 +392,7 @@ class MailComposer(models.TransientModel):
             else:
                 active_res_ids = parse_res_ids(self.env.context.get('active_ids'))
                 # beware, field is limited in storage, usage of active_ids in context still required
-                if active_res_ids and len(active_res_ids) <= self._batch_size:
+                if active_res_ids and len(active_res_ids) <= 500:
                     composer.res_ids = f"{self.env.context['active_ids']}"
                 elif not active_res_ids and self.env.context.get('active_id'):
                     composer.res_ids = f"{[self.env.context['active_id']]}"
@@ -623,6 +623,11 @@ class MailComposer(models.TransientModel):
         non_mass_mail.can_edit_body = True
         super(MailComposer, self - non_mass_mail)._compute_can_edit_body()
 
+    def _compute_field_value(self, field):
+        if field.compute_sudo:
+            return super(MailComposer, self.with_context(prefetch_fields=False))._compute_field_value(field)
+        return super()._compute_field_value(field)
+
     # ------------------------------------------------------------
     # CRUD / ORM
     # ------------------------------------------------------------
@@ -723,7 +728,7 @@ class MailComposer(models.TransientModel):
 
         batch_size = int(
             self.env['ir.config_parameter'].sudo().get_param('mail.batch_size')
-        ) or self._batch_size  # be sure to not have 0, as otherwise no iteration is done
+        ) or self._batch_size or 50  # be sure to not have 0, as otherwise no iteration is done
         for res_ids_iter in tools.split_every(batch_size, res_ids):
             res_ids_values = list(self._prepare_mail_values(res_ids_iter).values())
 
@@ -1049,7 +1054,8 @@ class MailComposer(models.TransientModel):
             ]
             # email_mode: prepare processed attachments as commands for mail.mail
             if email_mode:
-                mail_values['attachment_ids'] = record._process_attachments_for_post(
+                process_record = record if hasattr(record, "_process_attachments_for_post") else record.env["mail.thread"]
+                mail_values['attachment_ids'] = process_record._process_attachments_for_post(
                     decoded_attachments,
                     attachment_ids,
                     {'model': 'mail.message', 'res_id': 0}
