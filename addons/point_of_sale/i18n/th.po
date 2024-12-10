@@ -7125,6 +7125,8 @@ msgid ""
 "The amount of your payment lines must be rounded to validate the transaction.\n"
 "The rounding precision is %s so you should set %s or %s as payment amount instead of %s."
 msgstr ""
+"จำนวนเงินในบรรทัดการชำระเงินของคุณจะต้องถูกปัดเศษเพื่อยืนยันธุรกรรม\n"
+"ความแม่นยำของการปัดเศษคือ %s ดังนั้นคุณควรตั้งค่า %s หรือ %s เป็นจำนวนเงินการชำระเงินแทน %s"
 
 #. module: point_of_sale
 #. odoo-python
@@ -8407,7 +8409,7 @@ msgstr "คุณไม่สามารถใช้สมุดรายวั
 msgid ""
 "You do not have permission to open a POS session. Please try opening a "
 "session with a different user"
-msgstr ""
+msgstr "คุณไม่มีสิทธิ์ในการเปิดเซสชัน POS โปรดลองเปิดเซสชันกับผู้ใช้รายอื่น"
 
 #. module: point_of_sale
 #. odoo-python
